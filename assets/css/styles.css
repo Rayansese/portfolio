@@ -240,6 +240,57 @@ main {
   border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
 }
 
+.contact-info {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px color-mix(in oklab, var(--text) 10%, transparent);
+  border-color: color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+.contact-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.contact-link {
+  color: var(--primary);
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 .contact-form {
   display: grid;
   gap: 12px;
@@ -315,6 +366,9 @@ main {
   }
   .contact-form .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-info {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
