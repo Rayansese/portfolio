@@ -44,7 +44,9 @@
     var target = document.querySelector(id);
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    var headerHeight = 70; // Account for sticky header height
+    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    window.scrollTo({ top: targetPosition, behavior: "smooth" });
     history.pushState(null, "", id);
   });
 })();
